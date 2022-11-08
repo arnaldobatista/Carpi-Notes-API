@@ -31,5 +31,5 @@ app.use((error, req, res, next) => {
         message: 'internal server error'
     })
 })
-const PORT = '' + process.env.SERVER_PORT
+const PORT = '' + process.env.SERVER_PORT || 8180
 app.listen(PORT, () => console.log(`Server is running on part ${PORT}`))
