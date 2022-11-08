@@ -1,4 +1,5 @@
 require('express-async-errors') // preciso importar isso para poder tratar os erros
+require('dotenv/config') // dotenv serve para tratar chaves e senha. coisas relacionadas a seguranca
 const migrationsRum = require('./database/sqlite/migrations')
 const AppError = require('./utils/AppError') // preciso importar o appError pra poder usalo em algo que eu queira aqui.
 const uploadConfig = require('./configs/upload') // importando o uploadconfig para poder verificar a foto de perfil
@@ -30,5 +31,5 @@ app.use((error, req, res, next) => {
         message: 'internal server error'
     })
 })
-const PORT = 8180
+const PORT = process.env.SERVER_PORT
 app.listen(PORT, () => console.log(`Server is running on part ${PORT}`))
