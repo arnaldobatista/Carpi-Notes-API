@@ -1,5 +1,5 @@
 require('express-async-errors') // preciso importar isso para poder tratar os erros
-require('dotenv/config') // dotenv serve para tratar chaves e senha. coisas relacionadas a seguranca
+require("dotenv").config() // dotenv serve para tratar chaves e senha. coisas relacionadas a seguranca
 const migrationsRum = require('./database/sqlite/migrations')
 const AppError = require('./utils/AppError') // preciso importar o appError pra poder usalo em algo que eu queira aqui.
 const uploadConfig = require('./configs/upload') // importando o uploadconfig para poder verificar a foto de perfil
